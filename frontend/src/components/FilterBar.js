@@ -20,14 +20,17 @@ const FilterBar = ({ setFilterContext, setFilterValue }) => {
 
   return (
     <nav className="bg-gray-800 p-4 text-white rounded-md">
-      <ul className="flex space-x-4 justify-center">
+      <ul className="flex flex-wrap justify-center gap-3 sm:gap-4">
         {filters.map(({ context, value_in_english, value_in_arabic }, index) => (
           <li key={index}>
             <button
               onClick={() => handleFilterClick(context, value_in_english)}
-              className={`px-4 py-2 rounded-md transition ${
-                activeFilter === value_in_english ? "bg-blue-500" : "bg-gray-700 hover:bg-gray-600"
-              }`}
+              className={`px-4 py-2 rounded-md transition-all duration-200 text-sm sm:text-base 
+                ${
+                  activeFilter === value_in_english
+                    ? "bg-blue-500 text-white shadow-md"
+                    : "bg-gray-700 hover:bg-gray-600"
+                }`}
             >
               {value_in_arabic}
             </button>
