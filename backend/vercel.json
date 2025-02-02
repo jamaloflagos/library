@@ -1,16 +1,10 @@
 {
     "version": 2,
     "builds": [
-      {
-        "src": "library/asgi.py",
-        "use": "@vercel/python"
-      }
+      { "src": "manage.py", "use": "@vercel/python" }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "library/asgi.py"
-      }
+      { "src": "/(.*)", "dest": "manage.py" }
     ]
   }
   
